@@ -14,7 +14,7 @@ spec:
         app: nginx-webserver
     spec:
       imagePullSecrets:
-        - name: argo-secret
+        - name: github-packages
       containers:
         - name: nginx
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
