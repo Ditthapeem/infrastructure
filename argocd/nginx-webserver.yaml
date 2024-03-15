@@ -22,7 +22,7 @@ spec:
         - name: image.tag
           value: latest
     path: helm/nginx-webserver
-    repoURL: 'https://github.com/ditthapeem/infrastructure.git'
+    repoURL: 'https://github.com/Ditthapeem/infrastructure.git'
     targetRevision: main
   project: default
   syncPolicy:
