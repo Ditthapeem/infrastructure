@@ -4,7 +4,6 @@ metadata:
   name: nginx-webserver
   namespace: default
 spec:
-  serviceName: nginx-webserver
   replicas: 1
   selector:
     matchLabels:
@@ -17,8 +16,11 @@ spec:
       imagePullSecrets:
         - name: github-secret
       containers:
-        - name: nginx
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 80
           volumeMounts:
