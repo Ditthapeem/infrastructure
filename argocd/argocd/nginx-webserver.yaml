@@ -21,7 +21,7 @@ spec:
       parameters:
         - name: image.tag
           value: latest
-    path: helm/nginx-webserver
+    path: helm/myapp
     repoURL: 'https://github.com/Ditthapeem/infrastructure.git'
     targetRevision: main
   project: default
