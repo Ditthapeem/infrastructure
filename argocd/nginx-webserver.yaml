@@ -6,7 +6,7 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: nginx-webserver=ghcr.io/ditthapeem/nginx-webserver:latest
     argocd-image-updater.argoproj.io/nginx-webserver.update-strategy: digest
-    argocd-image-updater.argoproj.io/nginx-webserver.pull-secret: github-secret
+    argocd-image-updater.argoproj.io/nginx-webserver.pull-secret: secret:argocd/argo-secret#github-package
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 
