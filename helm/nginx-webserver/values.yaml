@@ -10,7 +10,7 @@ image:
   tag: latest
 
 imagePullSecrets: 
-  - name: github-package
+  - name: argo-secret
   
 nameOverride: ""
 fullnameOverride: ""
