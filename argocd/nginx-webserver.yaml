@@ -4,9 +4,9 @@ metadata:
   name: nginx-webserver
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: ghcr.io/ditthapeem/nginx-webserver:latest
+    argocd-image-updater.argoproj.io/image-list: nginx-webserver=ghcr.io/ditthapeem/nginx-webserver:latest
     argocd-image-updater.argoproj.io/nginx-webserver.update-strategy: latest
-    argocd-image-updater.argoproj.io/nginx-webserver.pull-secret: secret:argocd/argo-secret
+    argocd-image-updater.argoproj.io/nginx-webserver.pull-secret: secret:argocd/argo-secret#github-package
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 
